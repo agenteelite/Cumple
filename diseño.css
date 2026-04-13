@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #3C3E52; /* Fondo casi negro */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- DECORACIONES DE FONDO (Fotos y Emojis) --- */
+#background-decorations {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 1; /* Al fondo del todo */
+}
+
+.deco-img {
+    position: absolute;
+    width: 180px; /* Tamaño de las fotos */
+    border: 5px solid white; /* Borde estilo polaroid/foto impresa */
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.8);
+    opacity: 0.7; /* Un poco transparentes para no distraer demasiado */
+}
+
+.deco-emoji {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.6;
+}
+
+/* Inclinaciones y posiciones personalizadas */
+.tilt-left { transform: rotate(-12deg); }
+.tilt-right { transform: rotate(15deg); }
+
+.pos-1 { top: 10%; left: 10%; }
+.pos-2 { bottom: 15%; right: 10%; }
+.pos-3 { top: 15%; right: 15%; }
+.pos-4 { bottom: 20%; left: 15%; }
+.pos-5 { top: 40%; right: 5%; }
+
+
+/* --- CAPA 1: PANTALLA DE INICIO --- */
+#start-screen {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30; 
+}
+
+#start-btn {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    background: linear-gradient(45deg, #ff4081, #d81b60);
+    color: white;
+    border: 3px solid white;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 64, 129, 0.5);
+    transition: transform 0.2s ease;
+}
+
+#start-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- CAPA 2: CONTENEDOR DEL VIDEO PEQUEÑO --- */
+#video-container {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 25; /* Por encima del fondo negro, debajo del botón */
+}
+
+#intro-video {
+    width: 80vw; /* Ocupa el 80% de la pantalla, no el 100% */
+    max-width: 800px; /* Límite máximo para PC */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.9); /* Sombra fuerte para resaltar */
+}
+
+/* --- CAPA 3: SORPRESA FINAL (Fondo Pixel) --- */
+#main-surprise {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 40; /* Cuando aparece, tapa TODO lo anterior */
+}
+
+#bg-pixel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Abarca toda la pantalla sin deformarse */
+    image-rendering: pixelated;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#lyric-container {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    text-align: center;
+    z-index: 45;
+    padding: 0 20px;
+    transition: opacity 1s ease;
+}
+
+#lyric-text {
+    color: white;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    text-shadow: 3px 3px 0px #000;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.fade-in {
+    opacity: 1 !important;
+}
+
+/* Clase para desvanecer suavemente */
+.fade-out {
+    opacity: 0 !important;
+    transition: opacity 1s ease !important; /* Dura 1 segundo */
+}
+
+/* Estado inicial para lo que va a aparecer */
+.hidden {
+    display: none !important;
+}
+
+/* Animación de entrada para el fondo pixel */
+.fade-in {
+    animation: fadeInAnim 1.5s forwards;
+}
+
+@keyframes fadeInAnim {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- NUEVO: ESTILOS DEL LIBRO DIGITAL --- */
+#book-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 450px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+#book-wrapper iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 8px;
+}
+
+.fade-in-book {
+    opacity: 1 !important;
+}

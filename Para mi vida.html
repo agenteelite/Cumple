@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Mi Vida ❤️</title>
+    <link rel="stylesheet" href="diseño.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="background-decorations">
+        <img src="im1.jfif" class="deco-img tilt-left pos-1">
+        <img src="im2.jpg" class="deco-img tilt-right pos-2">
+        <img src="im3.jpg" class="deco-img tilt-left pos-3">
+        <span class="deco-emoji pos-4">✨</span>
+        <span class="deco-emoji pos-5">💖</span>
+    </div>
+
+    <div id="start-screen">
+        <button id="start-btn">🎁 ABRIR REGALO 🎁</button>
+    </div>
+
+    <div id="video-container" class="hidden">
+        <video id="intro-video" playsinline>
+            <source src="Video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="main-surprise" class="hidden">
+        <video id="bg-pixel" autoplay muted loop playsinline>
+            <source src="fondo.pixie.mp4" type="video/mp4">
+        </video>
+        
+        <div class="overlay"></div>
+
+        <div id="lyric-container">
+            <p id="lyric-text"></p>
+        </div>
+
+        <div id="book-wrapper" class="hidden">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 159.5745%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); overflow: hidden; border-radius: 8px; will-change: transform;">
+                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                    src="https://www.canva.com/design/DAHGsnrk-2o/dVaAxqgd5yvwMlD2kAmwVA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
+            </div>
+            <p style="text-align: center; margin-top: 10px; color: white; font-size: 10px;">Memorias de Erick</p>
+        </div>
+    </div>
+
+    <audio id="bg-music">
+        <source src="Musica.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="book-music" loop>
+        <source src="musica2.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
